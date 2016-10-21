@@ -1,6 +1,6 @@
-import {Component, OnInit, ViewContainerRef, trigger, state, style, transition, animate} from "@angular/core";
-import {MdSnackBar, MdSnackBarConfig} from "@angular/material";
-import {Task} from "../../models";
+import { Component, OnInit, ViewContainerRef, trigger, state, style, transition, animate } from '@angular/core';
+import { MdSnackBar, MdSnackBarConfig } from '@angular/material';
+import { Task } from '../../models';
 
 @Component({
     templateUrl: 'task-update.component.html',

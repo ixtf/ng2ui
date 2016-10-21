@@ -1,4 +1,4 @@
-import {Component, OnInit} from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
     templateUrl: 'material-test.component.html'
@@ -16,12 +16,12 @@ export class MaterialTestComponent implements OnInit {
 
     constructor() {
         // Update the value for the progress-bar on an interval.
-        setInterval(() => {
-            this.progress = (this.progress + Math.floor(Math.random() * 4) + 1) % 100;
-        }, 200);
     }
 
     ngOnInit() {
+        setInterval(() => {
+            this.progress = (this.progress + Math.floor(Math.random() * 4) + 1) % 100;
+        }, 200);
     }
 
 }
