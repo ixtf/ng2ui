@@ -1,0 +1,23 @@
+<md-sidenav-layout>
+
+    <md-sidenav #sidenav>
+        <md-nav-list>
+            <a class="demo-full-width" md-list-item routerLink="/task" routerLinkActive="active"
+               (click)="sidenav.toggle()">Task</a>
+            <a md-list-item routerLink="/material" routerLinkActive="active" (click)="sidenav.toggle()">Material</a>
+        </md-nav-list>
+    </md-sidenav>
+
+    <md-toolbar color="primary">
+        <button md-icon-button (click)="sidenav.toggle()">
+            <md-icon>menu</md-icon>
+        </button>
+
+        <span class="app-toolbar-filler"></span>
+    </md-toolbar>
+
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+
+</md-sidenav-layout>
