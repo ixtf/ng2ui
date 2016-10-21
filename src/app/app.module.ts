@@ -1,7 +1,7 @@
 import {NgModule} from "@angular/core";
 import {BrowserModule} from "@angular/platform-browser";
 import {FormsModule} from "@angular/forms";
-import {MaterialModule} from "@angular/material";
+import {MdlModule} from "angular2-mdl";
 import {AppComponent} from "./app.component";
 import {AppRoutingModule} from "./app-routing.module";
 import {AppI18nModule} from "./app-i18n.module";
@@ -12,7 +12,7 @@ import "../../public/css/styles.css";
     imports: [
         BrowserModule,
         FormsModule,
-        MaterialModule.forRoot(),
+        MdlModule,
         AppI18nModule,
         AppRoutingModule,
     ],

@@ -1,7 +1,7 @@
 export class Task {
     title: string;
     content: string;
-    precent: number;
+    precent: number = 0;
     startDate: Date;
     endDate: Date;
 }

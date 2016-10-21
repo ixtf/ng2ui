@@ -1,23 +1,40 @@
-<md-sidenav-layout>
+<mdl-layout mdl-layout-fixed-header mdl-layout-header-seamed #mdlLayout="mdlLayout">
+    <mdl-layout-header>
+        <mdl-layout-header-row>
+            <mdl-layout-title>Japp Material UI</mdl-layout-title>
+            <mdl-layout-spacer></mdl-layout-spacer>
+            <!-- Navigation. We hide it in small screens. -->
+            <nav class="mdl-navigation mdl-layout--large-screen-only">
+                <a class="mdl-navigation__link" [routerLink]="it.routerLink" routerLinkActive="is-active" *ngFor="let it of navs">
+                    {{it.title|translate}}
+                </a>
+            </nav>
+        </mdl-layout-header-row>
+    </mdl-layout-header>
 
-    <md-sidenav #sidenav>
-        <md-nav-list>
-            <a class="demo-full-width" md-list-item routerLink="/task" routerLinkActive="active"
-               (click)="sidenav.toggle()">Task</a>
-            <a md-list-item routerLink="/material" routerLinkActive="active" (click)="sidenav.toggle()">Material</a>
-        </md-nav-list>
-    </md-sidenav>
+    <mdl-layout-drawer>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" [routerLink]="it.routerLink" routerLinkActive="is-active" *ngFor="let it of navs" (click)="mdlLayout.toggleDrawer()">
+                {{it.title|translate}}
+            </a>
+        </nav>
+    </mdl-layout-drawer>
 
-    <md-toolbar color="primary">
-        <button md-icon-button (click)="sidenav.toggle()">
-            <md-icon>menu</md-icon>
-        </button>
+    <mdl-layout-content class="main">
+        <div class="main-content">
+            <router-outlet></router-outlet>
+        </div>
 
-        <span class="app-toolbar-filler"></span>
-    </md-toolbar>
-
-    <div>
-        <router-outlet></router-outlet>
-    </div>
-
-</md-sidenav-layout>
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo">Simple portfolio website</div>
+            </div>
+            <div class="mdl-mini-footer__right-section">
+                <ul class="mdl-mini-footer__link-list">
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Privacy & Terms</a></li>
+                </ul>
+            </div>
+        </footer>
+    </mdl-layout-content>
+</mdl-layout>

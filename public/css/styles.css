@@ -1,0 +1,10 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.main > footer {
+    margin: 1em -1em -1em -1em;
+}

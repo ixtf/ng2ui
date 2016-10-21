@@ -1,15 +1,21 @@
-<h1>Hero Form</h1>
 <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
-    <md-input class="demo-full-width" placeholder="title" name="title"
-              [dividerColor]="(title.invalid&&title.dirty)?'accent':''" [(ngModel)]="task.title"
-              required #title="ngModel">
-        <md-hint align="end" *ngIf="title.invalid&&title.dirty">
-            {{'VALID.REQUIRED'|translate}}
-        </md-hint>
-    </md-input>
-    <md-slider class="demo-full-width" tick-interval="auto" step="5" name="percent"
-               [(ngModel)]="task.precent"></md-slider>
-    <md-input class="demo-full-width" placeholder="content" name="content" [(ngModel)]="task.content"></md-input>
-    <button type="submit" color="primary" md-raised-button [disabled]="!taskForm.form.valid" [@heroState]="">Submit
+    <p>
+        <mdl-textfield [(ngModel)]="task.title" required label="title" name="title" floating-label>
+        </mdl-textfield>
+    </p>
+    <div style="display: flex">
+        <div style="display: inline-block">test</div>
+        <div style="width: 500px;">
+            <mdl-slider min="1" max="100" step="5" [(ngModel)]="task.precent" name="percent">
+            </mdl-slider>
+        </div>
+        <div style="display: inline-block">{{task.precent}}%</div>
+    </div>
+    <p>
+        <mdl-textfield [(ngModel)]="task.content" label="content" name="content" rows="3" maxrows="3" floating-label>
+        </mdl-textfield>
+    </p>
+    <button type="submit" mdl-button mdl-button-type="raised" mdl-ripple mdl-colored="primary" [disabled]="!taskForm.form.valid">
+        Submit
     </button>
 </form>

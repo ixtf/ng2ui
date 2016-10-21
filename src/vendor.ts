@@ -7,8 +7,8 @@ import "@angular/http";
 import "@angular/router";
 import "rxjs";
 import "ng2-translate/ng2-translate";
-import "@angular/material";
-import "@angular/material/core/theming/prebuilt/indigo-pink.css";
+import "angular2-mdl";
+import "material-design-lite/material.min.css";
 
 // RxJS
 
